@@ -9,17 +9,19 @@ const languagesAtom = atom(async () => {
     "https://restcountries.com/v3.1/all?fields=languages"
   );
   const countries = await response.json();
-  const languages = {};
-  countries.forEach(country => {
-    for (const languageCode in country.languages) {
-      languages[languageCode] = country.languages[languageCode];
-    }
+  const languages = [];
+  const seenCodes = new Set();
+
+  countries.forEach((country) => {
+    Object.entries(country.languages).forEach(([code, name]) => {
+      if (!seenCodes.has(code)) {
+        languages.push({ value: code, label: name });
+        seenCodes.add(code);
+      }
+    });
   });
-  const languageOptions = Object.entries(languages).map(([value, label]) => ({
-    value,
-    label,
-  }));
-  return languageOptions;
+
+  return languages;
 });
 
 export function generateTableColumns() {
