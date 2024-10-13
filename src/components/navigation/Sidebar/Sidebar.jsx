@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <Box
       sx={{
-        width: 250,
+        width: 270,
         height: "100vh",
         display: "flex",
         flexDirection: "column",

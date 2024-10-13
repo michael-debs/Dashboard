@@ -6,12 +6,12 @@ import {
 } from "@mui/icons-material";
 import HomeComponent from "../pages/Home";
 import Licenses from "../pages/Permissions/Licenses";
-import Languages from "../pages/Settings/Languages";
+import Languages from "../pages/Settings/LanguagesPage/Languages";
 import Registry from "../pages/Settings/Registry";
 import CompaniesSites from "../pages/Settings/CompaniesSites";
 import Housekeeping from "../pages/Housekeeping";
 import UserGroups from "../pages/Permissions/UserGroups";
-import FileTypes from "../pages/Settings/FileTypes";
+import FileTypes from "../pages/Settings/FileTypesPage/FileTypes";
 
 /**
  * @typedef {Object} Route

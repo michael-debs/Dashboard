@@ -22,6 +22,8 @@ function SmartTable({ columns, dataAtom, showCheckboxes, store }) {
             row={row}
             columns={columns}
             showCheckboxes={showCheckboxes}
+            rowsAtom={dataAtom}
+            rowIndex={index}
           />
         ))}
       </tbody>

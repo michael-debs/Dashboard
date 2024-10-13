@@ -1,25 +1,26 @@
-import { Select, MenuItem } from '@mui/joy';
-import { atom, useAtom } from 'jotai';
-
-const selectValueAtom = atom('');
+import { useAtom, useAtomValue } from "jotai";
+import Select from "../inputs/Select";
+import { loadable } from "jotai/utils";
 
 const SelectElement = ({ elementAtom }) => {
-    const [value, setValue] = useAtom(selectValueAtom);
+  const [element, setElement] = useAtom(elementAtom);
+  const options = useAtomValue(loadable(element.optionsAtom));
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
+  const handleChange = (e, newValue) => {
+    setElement((prev) => ({
+      ...prev,
+      value: newValue,
+    }));
+  };
 
-    return (
-        <Select value={value} onChange={handleChange}>
-            <MenuItem value="">
-                <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-    );
+  return (
+    <Select
+      style={element.style}
+      value={element.value}
+      options={options.state === 'hasData' ? options.data : []}
+      onChange={handleChange}
+    />
+  );
 };
 
 export default SelectElement;

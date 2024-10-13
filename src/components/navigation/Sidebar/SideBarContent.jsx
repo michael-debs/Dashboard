@@ -10,7 +10,7 @@ function SideBarContent() {
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        paddingLeft: 4,
+        paddingLeft: 6,
       }}
     >
       {routes.map((child, index) => (

@@ -11,7 +11,7 @@ function App() {
       }}
     >
       <Sidebar />
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", overflowY: 'auto', height: '100vh' }}>
         <Header />
         <AppRouter />
       </Box>

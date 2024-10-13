@@ -2,7 +2,13 @@ import { Checkbox } from "@mui/joy";
 import { useAtom } from "jotai";
 import { memo } from "react";
 
-const TableRow = memo(function TableRow({ row, columns, showCheckboxes }) {
+const TableRow = memo(function TableRow({
+  row,
+  columns,
+  showCheckboxes,
+  rowsAtom,
+  rowIndex,
+}) {
   return (
     <tr>
       {showCheckboxes && (
@@ -15,8 +21,15 @@ const TableRow = memo(function TableRow({ row, columns, showCheckboxes }) {
         const Component = columns[index].component;
 
         return (
-          <td key={key} style={{ padding: "30px 0" }}>
-            <Component elementAtom={row.keys[key]} />
+          <td
+            key={key}
+            style={{ ...columns[index].style, ...{ padding: "30px 0" } }}
+          >
+            <Component
+              elementAtom={row.keys[key]}
+              rowsAtom={rowsAtom}
+              rowIndex={rowIndex}
+            />
           </td>
         );
       })}
