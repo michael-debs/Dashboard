@@ -25,7 +25,7 @@ function TranslatorVendor({ translatorVendorAtom }) {
           { label: "DeepL", value: "deepl" },
           { label: "Local Translation", value: "local" },
         ]}
-        onChange={(e, newValue) => setTranslatorVendor(newValue)}
+        onChange={(newValue) => setTranslatorVendor(newValue)}
       />
     </Box>
   );

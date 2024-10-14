@@ -24,6 +24,7 @@ function TableHeader({ showCheckboxes, rows, store, columns }) {
         <th
           style={{
             paddingBottom: "15px",
+            paddingLeft: 0,
           }}
           key={column.key}
         >

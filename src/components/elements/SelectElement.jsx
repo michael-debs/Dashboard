@@ -6,7 +6,7 @@ const SelectElement = ({ elementAtom }) => {
   const [element, setElement] = useAtom(elementAtom);
   const options = useAtomValue(loadable(element.optionsAtom));
 
-  const handleChange = (e, newValue) => {
+  const handleChange = (newValue) => {
     setElement((prev) => ({
       ...prev,
       value: newValue,
