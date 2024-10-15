@@ -1,4 +1,4 @@
-import { Checkbox } from "@mui/joy";
+import CheckBox from "../../inputs/CheckBox";
 
 function TableHeader({ showCheckboxes, rows, store, columns }) {
   return (
@@ -10,7 +10,7 @@ function TableHeader({ showCheckboxes, rows, store, columns }) {
             paddingBottom: "10px",
           }}
         >
-          <Checkbox
+          <CheckBox
             onChange={(e) => {
               rows.forEach((row) =>
                 store.set(row.selectedAtom, e.target.checked)

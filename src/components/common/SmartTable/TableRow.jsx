@@ -1,6 +1,6 @@
-import { Checkbox } from "@mui/joy";
 import { useAtom } from "jotai";
 import { memo } from "react";
+import CheckBox from "../../inputs/CheckBox";
 
 const TableRow = memo(function TableRow({
   row,
@@ -40,7 +40,7 @@ const TableRow = memo(function TableRow({
 function TableRowCheckBoxComponent({ selectedAtom }) {
   const [selected, setSelected] = useAtom(selectedAtom);
   return (
-    <Checkbox
+    <CheckBox
       checked={selected}
       onChange={(e) => setSelected(e.target.checked)}
     />
