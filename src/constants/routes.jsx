@@ -1,10 +1,4 @@
-import {
-  Home,
-  CleaningServices,
-  Lock,
-  Settings,
-} from "@mui/icons-material";
-import HomeComponent from "../pages/Home";
+import { CleaningServices, Lock, Settings } from "@mui/icons-material";
 import Licenses from "../pages/Permissions/Licenses";
 import Languages from "../pages/Settings/LanguagesPage/Languages";
 import Registry from "../pages/Settings/Registry";
@@ -23,15 +17,8 @@ import FileTypes from "../pages/Settings/FileTypesPage/FileTypes";
  */
 export default [
   {
-    name: "Home",
-    path: "/",
-    icon: Home,
-    children: [],
-    element: <HomeComponent />,
-  },
-  {
     name: "Housekeeping",
-    path: "/housekeeping",
+    path: "/",
     icon: CleaningServices,
     children: [],
     element: <Housekeeping />,
