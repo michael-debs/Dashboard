@@ -44,7 +44,7 @@ export function generateTableColumns() {
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "center",
-        height: "100%",
+        paddingRight: "30px",
       },
     },
   ];
@@ -110,7 +110,7 @@ export function addRow({ store, rowsAtom }) {
       ...rows,
       {
         keys: {
-          language: generateLanguageSelectAtom({ value: '' }),
+          language: generateLanguageSelectAtom({ value: "" }),
           dictionary: atom({ value: "" }),
           delete: generateDeleteButtonAtom(),
         },

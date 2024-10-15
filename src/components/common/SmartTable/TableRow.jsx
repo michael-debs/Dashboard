@@ -1,6 +1,7 @@
 import { useAtom } from "jotai";
 import { memo } from "react";
 import CheckBox from "../../inputs/CheckBox";
+import { Box } from "@mui/joy";
 
 const TableRow = memo(function TableRow({
   row,
@@ -21,15 +22,19 @@ const TableRow = memo(function TableRow({
         const Component = columns[index].component;
 
         return (
-          <td
-            key={key}
-            style={{ ...columns[index].style, ...{ padding: "30px 0" } }}
-          >
-            <Component
-              elementAtom={row.keys[key]}
-              rowsAtom={rowsAtom}
-              rowIndex={rowIndex}
-            />
+          <td key={key}>
+            <Box
+              style={{
+                ...{ padding: "30px 0", height: "100%" },
+                ...columns[index].style,
+              }}
+            >
+              <Component
+                elementAtom={row.keys[key]}
+                rowsAtom={rowsAtom}
+                rowIndex={rowIndex}
+              />
+            </Box>
           </td>
         );
       })}
